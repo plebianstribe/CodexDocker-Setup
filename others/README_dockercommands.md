@@ -35,7 +35,7 @@ docker build -f others/Dockerfile_cuda130 -t codex-uv:cu130 .
 Choose the project directory mounted at `/app`:
 
 ```bash
-export codexProjDir="updatepublic"
+export codexProjDir="exampleCodexProject"
 mkdir -p -- "../$codexProjDir"
 ```
 
