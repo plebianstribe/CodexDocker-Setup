@@ -2,15 +2,16 @@
 
 ## Setup
 
-Before cloning, create a fine-grained GitHub personal access token (PAT) at
+Before cloning, create a fine-grained personal access token (PAT) on GitHub:
 <https://github.com/settings/personal-access-tokens>. Limit it to the repositories
-you need and grant `Contents: Read and write` only when pushes are required.
+you need, and grant `Contents: Read and write` only if you need to push changes.
+Copy the PAT when GitHub displays it; GitHub will not show it again.
 
-Configure a dedicated credential file on the host, then save the PAT before
-cloning:
+On the host, configure a dedicated Git credential file. Run the commands below,
+then paste the PAT copied from GitHub when prompted. The PAT input is hidden:
 
 ```bash
-git config --global credential.helper 'store --file=$HOME/.git-credentials-codex'
+git config --global credential.helper  "store --file=$HOME/.git-credentials-codex"
 
 read -r -p "GitHub username: " githubUser
 read -r -s -p "GitHub PAT: " githubPat
@@ -20,9 +21,9 @@ printf 'protocol=https\nhost=github.com\nusername=%s\npassword=%s\n\n' \
 unset githubPat
 ```
 
-The credential is stored as plaintext in `$HOME/.git-credentials-codex`, so keep
-the file private. Its dedicated filename makes it straightforward to mount into
-the container without exposing other credential-store files.
+Git stores the credential as plaintext in `$HOME/.git-credentials-codex`. Keep
+this file private. The dedicated filename lets you mount only this credential
+file into the container instead of exposing other credential-store files.
 
 ```bash
 git clone <THIS_REPO_URL>
