@@ -9,11 +9,14 @@ fi
 
 cd /workspace
 
-if [ -n "${CODEX_API_KEY:-}" ]; then
-    export CODEX_API_KEY
+if [ -z "${CODEX_API_KEY:-}" ]; then
+    echo "Warning: CODEX_API_KEY is not set. Start the container with --env-file."
 fi
 
-/usr/local/bin/envvar_checker.sh
+if [ ! -f "${CODEX_HOME:-${HOME}/.codex}/config.toml" ]; then
+    echo "Warning: Codex config.toml is missing from ${CODEX_HOME:-${HOME}/.codex}."
+fi
+
 /usr/local/bin/uv_setup.sh "$TARGET_REPO"
 
 if [ -n "${CODEX_API_KEY:-}" ]; then

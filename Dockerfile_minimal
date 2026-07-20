@@ -7,10 +7,11 @@ ENV DEBIAN_FRONTEND=noninteractive \
     CODEX_HOME=/home/.codex
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    openssh-client rsync nano \
     ca-certificates curl git tmux nodejs npm \
     python3 python3-pip python3-venv python-is-python3 \
-    wget ripgrep tree jq less unzip zip procps file \
-    net-tools iputils-ping \
+    wget sed perl ripgrep tree jq less unzip zip xz-utils procps file \
+    net-tools iputils-ping pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g @openai/codex
@@ -22,11 +23,10 @@ RUN uv pip install --system jupyterlab
 WORKDIR /workspace
 RUN mkdir -p /home/.codex /root/.codex && chmod 700 /home/.codex /root/.codex
 COPY tmux.conf /etc/tmux.conf
-COPY scripts/envvar_checker.sh /usr/local/bin/envvar_checker.sh
 COPY scripts/uv_setup.sh /usr/local/bin/uv_setup.sh
 COPY scripts/startjupyter.sh /usr/local/bin/startjupyter.sh
 COPY scripts/docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
-RUN chmod +x /usr/local/bin/envvar_checker.sh /usr/local/bin/uv_setup.sh /usr/local/bin/startjupyter.sh /usr/local/bin/docker_entrypoint.sh
+RUN chmod +x /usr/local/bin/uv_setup.sh /usr/local/bin/startjupyter.sh /usr/local/bin/docker_entrypoint.sh
 
 EXPOSE 8888 8000 3000 5173 8080
 

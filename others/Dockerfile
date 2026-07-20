@@ -41,10 +41,9 @@ RUN uv pip install --system jupyterlab
 WORKDIR /workspace
 RUN mkdir -p /home/.codex /root/.codex && chmod 700 /home/.codex /root/.codex
 COPY tmux.conf /etc/tmux.conf
-COPY scripts/envvar_checker.sh /usr/local/bin/envvar_checker.sh
 COPY scripts/uv_setup.sh /usr/local/bin/uv_setup.sh
 COPY scripts/docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
-RUN chmod +x /usr/local/bin/envvar_checker.sh /usr/local/bin/uv_setup.sh /usr/local/bin/docker_entrypoint.sh
+RUN chmod +x /usr/local/bin/uv_setup.sh /usr/local/bin/docker_entrypoint.sh
 
 EXPOSE 8888 8000 3000 5173 7860 8501 8080 11434
 

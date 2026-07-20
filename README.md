@@ -44,3 +44,13 @@ docker run -it \
 | Docker commands | [`others/README_dockercommands.md`](others/README_dockercommands.md) | CUDA 12.0, 12.9, and 13.0 image build and run commands. |
 | Git setup | [`others/README_gitsetup.md`](others/README_gitsetup.md) | Git credentials, authentication, and Docker credential mounts. |
 | Windows setup | [`others/README_setupWindows.md`](others/README_setupWindows.md) | WSL2, Docker Desktop, Git, and repository setup. |
+
+## Maintained Scripts
+
+| Script | Purpose |
+| --- | --- |
+| `createcodexconfig.sh` | Generates `.codex/config.toml` from `.env`. |
+| `docker_entrypoint.sh` | Validates the container environment, prepares Python dependencies, and starts tmux. |
+| `uv_setup.sh` | Initializes a uv project when needed and imports a requirements file when present. |
+| `startjupyter.sh` | Starts the JupyterLab server installed in the Docker images. |
+| `user_verification_and_gitpush.sh` | Prints branch comparison and manual integration commands. |
