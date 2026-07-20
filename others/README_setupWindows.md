@@ -40,4 +40,4 @@ mkdir -p .codex
 cp ~/.codex/config.toml ./.codex/config.toml
 ```
 
-Build and run are in [README.md](README.md) and [README_dockercommands.md](README_dockercommands.md).
+Build and run are in the [main README](../README.md) and [archived Docker commands](README_dockercommands.md).
