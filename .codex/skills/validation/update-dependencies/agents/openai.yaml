@@ -1,0 +1,4 @@
+interface:
+  display_name: "Update Dependencies"
+  short_description: "Safely add and validate project dependencies"
+  default_prompt: "Use this skill to update dependency manifests, install packages, and validate test/tool availability with reproducible logs."

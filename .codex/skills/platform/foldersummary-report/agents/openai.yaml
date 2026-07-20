@@ -1,0 +1,4 @@
+interface:
+  display_name: "Folder Summary Report"
+  short_description: "Generate skill architecture reports with dependency maps."
+  default_prompt: "Analyze a skill folder and produce a grouped markdown architecture report with explicit dependency and loop diagrams."

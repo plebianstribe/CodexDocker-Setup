@@ -1,0 +1,5 @@
+version: 1
+interface:
+  display_name: Parallel Goal Run
+  short_description: Execute active goal scope by staged safe parallelism
+  default_prompt: Execute the active goal scope stage-by-stage from the COMPLETIONTRACKER, parallelize non-conflicting steps, and apply harsh gate checks before each unlock.

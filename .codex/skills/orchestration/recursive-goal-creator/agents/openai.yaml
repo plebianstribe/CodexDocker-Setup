@@ -1,0 +1,4 @@
+interface:
+  display_name: "Recursive Goal Creator"
+  short_description: "Compose master goals and non-overlapping subgoal plans"
+  default_prompt: "Use $recursive-goal-creator to build a master goal with scoped, non-duplicative subgoal goal/tracker pairs."

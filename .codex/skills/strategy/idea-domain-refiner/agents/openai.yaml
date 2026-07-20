@@ -1,0 +1,4 @@
+interface:
+  display_name: "Idea Domain Refiner"
+  short_description: "Refine ideas with domain persona depth"
+  default_prompt: "Use $idea-domain-refiner to refine this idea for a specific domain persona and produce a concrete implementation plan."

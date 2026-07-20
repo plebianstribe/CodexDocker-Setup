@@ -1,0 +1,5 @@
+version: 1
+interface:
+  display_name: Model Validation QA
+  short_description: Pre-training subset validation for model-impacting updates
+  default_prompt: Validate this model-impacting update with a deterministic small subset and targeted tests before full training or experiments.

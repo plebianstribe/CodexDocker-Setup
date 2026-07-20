@@ -1,0 +1,5 @@
+version: 1
+interface:
+  display_name: Playwright Testing QA
+  short_description: Deterministic Playwright UI capture and policy checks
+  default_prompt: Run Playwright UI validation with click markers, deterministic artifacts, and enforced delay policy; route model-training validation requests to model-validation-qa.

@@ -1,0 +1,12 @@
+{
+  "name": "workspace-tools",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Workspace-level tooling dependencies",
+  "devDependencies": {
+    "markdownlint-cli": "0.39.0"
+  },
+  "scripts": {
+    "lint:md": "markdownlint-cli"
+  }
+}

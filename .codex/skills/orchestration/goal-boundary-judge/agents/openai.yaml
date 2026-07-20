@@ -1,0 +1,4 @@
+interface:
+  display_name: "Goal Boundary Judge"
+  short_description: "Unify scope-fit and recursive boundary decisions"
+  default_prompt: "Use $goal-boundary-judge to choose update, create, breakdown, or mergeup using sprint-fit, quality, and complexity-delta checks."

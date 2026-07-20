@@ -1,0 +1,5 @@
+version: 1
+interface:
+  display_name: Goal Harsh Judge
+  short_description: Strict gate audit for active goal scope completion
+  default_prompt: Audit a completed step in the active goal scope, issue PASS/CONDITIONAL PASS/FAIL, and decide completion-tracker stage unlock readiness.

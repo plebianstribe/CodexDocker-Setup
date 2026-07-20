@@ -1,0 +1,5 @@
+version: 1
+interface:
+  display_name: Goal Creator
+  short_description: Build or update provable goals and completion trackers
+  default_prompt: Create or update a goal scope with testable subgoals, GOALS stage assignments, and a stage-sorted COMPLETIONTRACKER for execution and harsh gate validation.

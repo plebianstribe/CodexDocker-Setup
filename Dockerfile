@@ -1,0 +1,51 @@
+# Build args let you align image CUDA + PyTorch wheel to your host driver support.
+ARG CUDA_TAG=12.1.1-cudnn8-runtime-ubuntu22.04
+FROM nvidia/cuda:${CUDA_TAG}
+
+ARG TORCH_CUDA_CHANNEL=cu121
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    PIP_NO_CACHE_DIR=1 \
+    PYTHONUNBUFFERED=1 \
+    HOME=/home \
+    CODEX_HOME=/home/.codex
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ssh rsync nano \
+    ca-certificates curl git tmux nodejs npm \
+    python3 python3-pip python3-venv python-is-python3 \
+    wget perl ripgrep tree jq less unzip zip procps file \
+    net-tools iputils-ping build-essential pkg-config \
+    libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev \
+    libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev \
+    libffi-dev liblzma-dev libzstd-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN npm install -g @openai/codex
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /usr/local/bin/
+#RUN curl -LsSf https://astral.sh/uv/install.sh | sh && ln -s /root/.local/bin/uv /usr/local/bin/uv
+
+# 1. Allow uv to safely install and override system-wide packages 
+ENV UV_BREAK_SYSTEM_PACKAGES=1
+
+# 2. Pre-cache PyTorch into the system so future 'uv sync' calls skip downloading it
+RUN uv pip install --system \
+    --index-url https://download.pytorch.org/whl/${TORCH_CUDA_CHANNEL} \
+    torch torchvision torchaudio
+
+RUN uv pip install --system jupyterlab
+
+#RUN python -m pip install --upgrade pip && \
+#    pip install --index-url https://download.pytorch.org/whl/${TORCH_CUDA_CHANNEL} torch torchvision torchaudio
+
+WORKDIR /workspace
+RUN mkdir -p /home/.codex /root/.codex && chmod 700 /home/.codex /root/.codex
+COPY tmux.conf /etc/tmux.conf
+COPY scripts/envvar_checker.sh /usr/local/bin/envvar_checker.sh
+COPY scripts/uv_setup.sh /usr/local/bin/uv_setup.sh
+COPY scripts/docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
+RUN chmod +x /usr/local/bin/envvar_checker.sh /usr/local/bin/uv_setup.sh /usr/local/bin/docker_entrypoint.sh
+
+EXPOSE 8888 8000 3000 5173 7860 8501 8080 11434
+
+ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]

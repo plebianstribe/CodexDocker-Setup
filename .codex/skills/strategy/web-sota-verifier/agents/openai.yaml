@@ -1,0 +1,4 @@
+interface:
+  display_name: "Web SOTA Verifier"
+  short_description: "Verify novelty and benchmark with web evidence"
+  default_prompt: "Use $web-sota-verifier to verify this refined concept against SOTA, competitors, and analogous deployments with cited evidence."

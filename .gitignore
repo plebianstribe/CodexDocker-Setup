@@ -1,0 +1,13 @@
+.env
+
+/.codex-cache/*
+/.codex/*
+!/.codex/skills/
+!/.codex/skills/**
+/.codex/skills/**/__pycache__/
+/.codex/skills/**/*.pyc
+/.codex.bak/*
+docker_pyenv_root/*
+
+.ipynb_checkpoints/
+node_modules/

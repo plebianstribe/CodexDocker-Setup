@@ -1,0 +1,4 @@
+interface:
+  display_name: "Interactive Planner"
+  short_description: "Interactive planning from repo/script context with persona subprocess support"
+  default_prompt: "Use $interactive-planner to build a reviewable planning view from current repo context, optional starting folder/script, and persona-specific subprocess insights."

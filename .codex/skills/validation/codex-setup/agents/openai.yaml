@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Setup"
+  short_description: "Reusable test and integration setup playbooks"
+  default_prompt: "Use this skill to plan and execute reproducible Python, API, UI, and integration test workflows with shared contracts and artifact paths."
