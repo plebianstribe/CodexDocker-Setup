@@ -2,6 +2,28 @@
 
 ## Setup
 
+Before cloning, create a fine-grained GitHub personal access token (PAT) at
+<https://github.com/settings/personal-access-tokens>. Limit it to the repositories
+you need and grant `Contents: Read and write` only when pushes are required.
+
+Configure a dedicated credential file on the host, then save the PAT before
+cloning:
+
+```bash
+git config --global credential.helper 'store --file=$HOME/.git-credentials-codex'
+
+read -r -p "GitHub username: " githubUser
+read -r -s -p "GitHub PAT: " githubPat
+printf '\n'
+printf 'protocol=https\nhost=github.com\nusername=%s\npassword=%s\n\n' \
+  "$githubUser" "$githubPat" | git credential approve
+unset githubPat
+```
+
+The credential is stored as plaintext in `$HOME/.git-credentials-codex`, so keep
+the file private. Its dedicated filename makes it straightforward to mount into
+the container without exposing other credential-store files.
+
 ```bash
 git clone <THIS_REPO_URL>
 cd Docker-Codex-EditCopy
@@ -34,6 +56,8 @@ docker run -it \
   -p 18888:8888 \
   --volume "$PWD":/workspace \
   --volume "$PWD/../$codexProjDir":/app \
+  --volume "$HOME/.gitconfig":/home/.gitconfig:ro \
+  --volume "$HOME/.git-credentials-codex":/home/.git-credentials-codex:ro \
   codex-uv:minimal
 ```
 

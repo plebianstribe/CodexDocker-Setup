@@ -27,9 +27,24 @@ sudo apt install -y git
 
 ## 4) Configure git credentials in Ubuntu
 
+Create a fine-grained PAT at <https://github.com/settings/personal-access-tokens>,
+limit it to the repositories you need, and grant `Contents: Read and write` only
+when pushes are required. Then configure the credential file that can be mounted
+into Docker:
+
 ```bash
 git config --global credential.helper 'store --file=$HOME/.git-credentials-codex'
+
+read -r -p "GitHub username: " githubUser
+read -r -s -p "GitHub PAT: " githubPat
+printf '\n'
+printf 'protocol=https\nhost=github.com\nusername=%s\npassword=%s\n\n' \
+  "$githubUser" "$githubPat" | git credential approve
+unset githubPat
 ```
+
+The PAT is saved in this plaintext file without being echoed in the terminal.
+Keep the file private.
 
 ## 5) Clone and run this repo from Ubuntu terminal
 

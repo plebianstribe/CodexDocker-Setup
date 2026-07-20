@@ -6,9 +6,17 @@ Use this on the host machine before starting Docker.
 
 ```bash
 git config --global credential.helper 'store --file=$HOME/.git-credentials-codex'
+
+read -r -p "GitHub username: " githubUser
+read -r -s -p "GitHub PAT: " githubPat
+printf '\n'
+printf 'protocol=https\nhost=github.com\nusername=%s\npassword=%s\n\n' \
+  "$githubUser" "$githubPat" | git credential approve
+unset githubPat
 ```
 
-This writes HTTPS credentials to `$HOME/.git-credentials-codex` after first authenticated git operation.
+This writes the HTTPS credential to `$HOME/.git-credentials-codex` before the
+clone. The PAT is not echoed in the terminal.
 
 ## 2) Clone this repository
 
@@ -17,13 +25,13 @@ git clone <THIS_REPO_URL>
 cd <THIS_REPO_DIR>
 ```
 
-## 3) Force first authenticated operation
+## 3) Confirm authentication
 
 ```bash
 git fetch origin
 ```
 
-If prompted, use your PAT as password for HTTPS.
+The saved PAT will be used automatically.
 
 ## 4) Verify token is persisted in the exact file to mount
 
@@ -35,7 +43,7 @@ grep -n 'github.com' "$HOME/.git-credentials-codex"
 ## 5) Mount the credentials file into Docker
 
 ```bash
---volume "$HOME/.git-credentials-codex":/home/.git-credentials:ro
+--volume "$HOME/.git-credentials-codex":/home/.git-credentials-codex:ro
 ```
 
 Also mount git config:
