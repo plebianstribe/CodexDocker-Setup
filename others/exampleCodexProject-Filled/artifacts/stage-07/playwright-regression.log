@@ -1,0 +1,4 @@
+
+> test:ui
+> node tests/ui_capture.js
+

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "author": {
+    "id": "A5114339998",
+    "name": "Chong Min John Tan",
+    "affiliation": null,
+    "works_count": 2,
+    "cited_by_count": 21,
+    "topics": [
+      "Advanced Neural Network Applications",
+      "Energy Efficient Wireless Sensor Networks",
+      "Software-Defined Networks and 5G"
+    ],
+    "orcid": null,
+    "provider": "OpenAlex"
+  },
+  "last_synced_at": "2026-07-20T10:02:42.663092+00:00",
+  "papers": {
+    "W3205974354": {
+      "id": "https://openalex.org/W3205974354",
+      "title": "S-Cyc: A Learning Rate Schedule for Iterative Pruning of ReLU-based Networks",
+      "authors": [
+        "Shiyu Liu",
+        "Chong Min John Tan",
+        "Mehul Motani"
+      ],
+      "year": 2021,
+      "venue": "arXiv (Cornell University)",
+      "doi": "10.48550/arxiv.2110.08764",
+      "source_url": "http://arxiv.org/abs/2110.08764",
+      "citation_count": 0,
+      "citation_source": "OpenAlex",
+      "retrieved_at": "2026-07-20T10:02:42.661828Z",
+      "pdf": {
+        "url": "https://arxiv.org/pdf/2110.08764",
+        "is_open_access": true,
+        "origin": "http://arxiv.org/abs/2110.08764"
+      },
+      "first_seen_at": "2026-07-20T10:02:42.663092+00:00",
+      "last_seen_at": "2026-07-20T10:02:42.663092+00:00",
+      "documents": [],
+      "library_state": "new"
+    },
+    "W3035544451": {
+      "id": "https://openalex.org/W3035544451",
+      "title": "DropNet: Reducing Neural Network Complexity via Iterative Pruning",
+      "authors": [
+        "Chong Min John Tan",
+        "Mehul Motani"
+      ],
+      "year": 2020,
+      "venue": "International Conference on Machine Learning",
+      "doi": null,
+      "source_url": "http://proceedings.mlr.press/v119/tan20a/tan20a.pdf",
+      "citation_count": 21,
+      "citation_source": "OpenAlex",
+      "retrieved_at": "2026-07-20T10:02:42.661828Z",
+      "pdf": {
+        "url": null,
+        "is_open_access": false,
+        "origin": null
+      },
+      "first_seen_at": "2026-07-20T10:02:42.663092+00:00",
+      "last_seen_at": "2026-07-20T10:02:42.663092+00:00",
+      "documents": [],
+      "library_state": "new"
+    }
+  }
+}

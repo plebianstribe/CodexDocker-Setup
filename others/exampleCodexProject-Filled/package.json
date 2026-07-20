@@ -1,0 +1,12 @@
+{
+  "name": "seemycitations-ui-qa",
+  "private": true,
+  "scripts": {
+    "test:ui": "node tests/ui_capture.js",
+    "test:ui:live": "node tests/ui_live_mehul_motani.js",
+    "test:ui:reader": "node tests/ui_keyword_reader.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1"
+  }
+}

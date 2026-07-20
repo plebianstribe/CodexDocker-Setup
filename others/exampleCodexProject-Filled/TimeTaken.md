@@ -1,0 +1,55 @@
+# TimeTaken
+
+- Current time (UTC+8): 2026-07-20 16:54:07
+- Progress: initiated from initial example project dir
+- Current time (UTC+8): 2026-07-20 16:56:45
+- Skill call: goal-creator
+- Progress: Created SEEMYCITATIONS goal and completion tracker artifacts with deterministic stage gates and TimeTaken wiring.
+- Current time (UTC+8): 2026-07-20 17:07:27
+- Skill call: idea-domain-refiner (local mode, UI/UX expert lens)
+- Progress: Added execution-ready UI specifications, state contracts, accessibility gates, risk controls, validation experiments, and staged UI acceptance criteria to SEEMYCITATIONS_GOALS.md.
+- Current time (UTC+8): 2026-07-20 17:09:05
+- Skill call: parallel-goal-run (standard mode) with update-dependencies and harsh stage gates
+- Progress: Started dependency-gated execution of SEEMYCITATIONS goals using a keyless OpenAlex adapter, FastAPI UI, local caching, PyMuPDF extraction, and deterministic test evidence.
+- Current time (UTC+8): 2026-07-20 17:10:55
+- Stage completed: STAGE-01
+- Progress: Scaffolded project foundation, installed and verified dependencies, and documented architecture/tooling decisions.
+- Current time (UTC+8): 2026-07-20 17:11:58
+- Stage completed: STAGE-02
+- Progress: Implemented keyless OpenAlex author search and normalized, provider-attributed citation records with explicit ambiguous candidates.
+- Current time (UTC+8): 2026-07-20 17:12:55
+- Stage completed: STAGE-03
+- Progress: Added local metadata/text cache contracts, duplicate-call reduction, and actionable API/PDF failure-state mappings.
+- Current time (UTC+8): 2026-07-20 17:14:03
+- Stage completed: STAGE-04
+- Progress: Enabled guarded open-access PDF fetch, validated local upload, document switching, extraction, and persisted status/error outcomes.
+- Current time (UTC+8): 2026-07-20 17:16:49
+- Stage completed: STAGE-05
+- Progress: Implemented deterministic whole-word keyword analytics with normalized input, sorted counts, page locations, and snippets.
+- Current time (UTC+8): 2026-07-20 17:21:30
+- Skill call: playwright-testing-qa (STAGE-06 UI acceptance)
+- Progress: Verified the no-reload author-to-page-evidence workflow with marked screenshots, trace, video, six paced actions, and zero click-spacing violations.
+- Current time (UTC+8): 2026-07-20 17:21:36
+- Stage completed: STAGE-06
+- Progress: Completed the full test suite, live keyless OpenAlex smoke test, deterministic Playwright UI acceptance, and delivery documentation.
+- Current time (UTC+8): 2026-07-20 17:23:30
+- Skill call: goal-creator (per-author durable library refinement)
+- Progress: Added SG-07 with deterministic author folders, versioned paper indexes, verified local-PDF reuse, delta-only OA downloads, restart recovery, and harsh evidence gates.
+- Current time (UTC+8): 2026-07-20 17:25:30
+- Skill call: parallel-goal-run (STAGE-07 standard mode)
+- Progress: Started durable per-author library implementation with atomic indexes, verified local reuse, incremental OA downloads, and live Mehul Motani UI acceptance.
+- Current time (UTC+8): 2026-07-20 17:30:06
+- Skill call: playwright-testing-qa (live Mehul Motani acceptance)
+- Progress: Verified real OpenAlex author disambiguation, 100-work local indexing, work selection, marked screenshots, trace, video, and zero click-spacing violations.
+- Current time (UTC+8): 2026-07-20 17:30:06
+- Stage completed: STAGE-07
+- Progress: Added atomic per-author paper indexes and hash-verified incremental OA synchronization, with repeat/delta download proofs and 26 passing regression tests.
+- Current time (UTC+8): 2026-07-20 18:10:00
+- Skill call: goal-creator (automatic keyword/PDF reader refinement)
+- Progress: Added SG-08 with deterministic extraction, editable suggestions, a 75/25 full-document reader, highlighted match navigation, collapsible sidebar, Back restoration, and Playwright gates.
+- Current time (UTC+8): 2026-07-20 18:14:12
+- Skill call: playwright-testing-qa (automatic keyword/PDF reader acceptance)
+- Progress: Verified editable suggestions, exact 75/25 reader geometry, complete page rendering, match autoscroll/focus/highlight, sidebar minimize/restore, Back restoration, and zero pacing violations.
+- Current time (UTC+8): 2026-07-20 18:14:12
+- Stage completed: STAGE-08
+- Progress: Added local frequency-based keyword extraction and a navigable full-document reader with 31 passing tests and deterministic UI evidence.

@@ -1,0 +1,88 @@
+{
+  "selectors": {
+    "primary_action": "#author-search button[type=\"submit\"]",
+    "candidate": ".candidate",
+    "work": ".work-card",
+    "file_input": "#pdf-file",
+    "upload_action": "#upload-form button[type=\"submit\"]",
+    "final_action": "#analysis-form button[type=\"submit\"]",
+    "status_target": "#analysis-status",
+    "verification_target": "#evidence-viewer",
+    "keyword_result": ".keyword-button"
+  },
+  "minDelayMs": 700,
+  "actions": [
+    {
+      "selector": "#author-search button[type=\"submit\"]",
+      "x": 1106,
+      "y": 449,
+      "label": "Search authors",
+      "upload_initiating": false,
+      "timestamp": "2026-07-20T09:29:15.198Z",
+      "delta_from_previous_ms": null,
+      "raw_delta_before_wait_ms": null,
+      "wait_applied_ms": 0,
+      "ris_path": null
+    },
+    {
+      "selector": ".candidate",
+      "x": 720,
+      "y": 622,
+      "label": "Select author candidate",
+      "upload_initiating": false,
+      "timestamp": "2026-07-20T09:29:15.990Z",
+      "delta_from_previous_ms": 792,
+      "raw_delta_before_wait_ms": 13,
+      "wait_applied_ms": 687,
+      "ris_path": null
+    },
+    {
+      "selector": ".work-card",
+      "x": 275,
+      "y": 1160,
+      "label": "Select scholarly work",
+      "upload_initiating": false,
+      "timestamp": "2026-07-20T09:29:16.792Z",
+      "delta_from_previous_ms": 802,
+      "raw_delta_before_wait_ms": 11,
+      "wait_applied_ms": 689,
+      "ris_path": null
+    },
+    {
+      "selector": "#upload-form button[type=\"submit\"]",
+      "x": 687,
+      "y": 662,
+      "label": "Upload authorized PDF",
+      "upload_initiating": true,
+      "timestamp": "2026-07-20T09:29:17.585Z",
+      "delta_from_previous_ms": 793,
+      "raw_delta_before_wait_ms": 220,
+      "wait_applied_ms": 480,
+      "ris_path": null
+    },
+    {
+      "selector": "#analysis-form button[type=\"submit\"]",
+      "x": 1287,
+      "y": 598,
+      "label": "Analyze keywords",
+      "upload_initiating": false,
+      "timestamp": "2026-07-20T09:29:18.378Z",
+      "delta_from_previous_ms": 793,
+      "raw_delta_before_wait_ms": 17,
+      "wait_applied_ms": 683,
+      "ris_path": null
+    },
+    {
+      "selector": ".keyword-button",
+      "x": 698,
+      "y": 683,
+      "label": "Open page evidence",
+      "upload_initiating": false,
+      "timestamp": "2026-07-20T09:29:19.157Z",
+      "delta_from_previous_ms": 779,
+      "raw_delta_before_wait_ms": 8,
+      "wait_applied_ms": 692,
+      "ris_path": null
+    }
+  ]
+}

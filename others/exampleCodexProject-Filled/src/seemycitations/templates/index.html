@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SeeMyCitations — scholarly evidence explorer</title>
+  <link rel="stylesheet" href="/static/app.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div><a class="brand" href="/">SeeMyCitations</a><p>Trace citation metadata to evidence inside authorized PDFs.</p></div>
+    <span class="privacy-badge">Local workspace</span>
+  </header>
+  <main>
+    <section class="search-panel" aria-labelledby="search-heading">
+      <p class="eyebrow">Step 1 · Identify</p>
+      <h1 id="search-heading">Find the right author</h1>
+      <p class="lede">Search free OpenAlex metadata. Similar names stay separate so you choose the identity.</p>
+      <form id="author-search" class="search-form">
+        <label for="author-query">Author name</label>
+        <div class="field-row"><input id="author-query" name="q" minlength="2" maxlength="200" required autocomplete="off" placeholder="e.g. Fei-Fei Li"><button type="submit">Search authors</button></div>
+        <p class="hint">Enter at least 2 characters. No API key is required.</p>
+      </form>
+      <div id="global-status" class="status" role="status" aria-live="polite"></div>
+      <div id="global-error" class="alert" role="alert" hidden></div>
+      <div id="author-results" class="candidate-grid" aria-label="Author candidates"></div>
+    </section>
+
+    <section id="workspace" class="workspace" hidden>
+      <aside class="works-panel" aria-labelledby="works-heading">
+        <div id="selected-author" class="selection-summary"></div>
+        <div class="section-heading"><div><p class="eyebrow">Step 2 · Select</p><h2 id="works-heading">Works</h2></div><select id="work-sort" aria-label="Sort works"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="citations">Most cited</option></select></div>
+        <button id="sync-library" class="secondary" type="button">Sync new open-access PDFs</button>
+        <p class="hint">Verified local PDFs are reused; only new or missing eligible files are downloaded.</p>
+        <div id="library-status" class="status" role="status" aria-live="polite"></div>
+        <p id="works-status" class="status" role="status" aria-live="polite"></p>
+        <button id="retry-works" class="secondary" type="button" hidden>Retry loading works</button>
+        <div id="works-list" class="works-list"></div>
+      </aside>
+
+      <section class="detail-panel" aria-labelledby="detail-heading">
+        <div id="work-empty" class="empty-state"><h2 id="detail-heading">Choose a work</h2><p>Select a publication to attach an authorized PDF and inspect its evidence.</p></div>
+        <div id="work-detail" hidden>
+          <p class="eyebrow">Step 3 · Attach</p><h2 id="work-title" tabindex="-1"></h2><div id="work-meta" class="work-meta"></div>
+          <div class="pdf-actions">
+            <button id="fetch-pdf" type="button" hidden>Fetch open-access PDF</button>
+            <form id="upload-form"><label for="pdf-file">Upload an authorized PDF</label><input id="pdf-file" type="file" accept="application/pdf,.pdf" required><span class="hint">PDF only, up to {{ max_upload_mb }} MB.</span><button type="submit">Upload and extract</button></form>
+          </div>
+          <div id="document-status" class="status" role="status" aria-live="polite"></div>
+          <div class="document-picker"><label for="document-select">Active document</label><select id="document-select"><option value="">No document selected</option></select></div>
+
+          <section id="analysis-panel" aria-labelledby="analysis-heading">
+            <p class="eyebrow">Step 4 · Inspect</p><h3 id="analysis-heading">Keyword evidence</h3>
+            <p class="hint">Matching rule: case-insensitive whole words. Separate keywords with commas or new lines.</p>
+            <form id="analysis-form"><label for="keywords">Suggested keywords (editable)</label><textarea id="keywords" rows="4" placeholder="Keywords will be extracted when the document is ready" required disabled></textarea><button type="submit" disabled>Find keywords</button></form>
+            <div id="analysis-status" class="status" role="status" aria-live="polite">Choose a ready document to enable analysis.</div>
+            <div class="evidence-layout"><div id="keyword-results" class="keyword-results"></div><article id="evidence-viewer" class="evidence-viewer" aria-live="polite"><h4>Page evidence</h4><p>Select a keyword result to inspect its matches.</p></article></div>
+          </section>
+        </div>
+      </section>
+    </section>
+  </main>
+  <section id="reader-view" class="reader-view" aria-labelledby="reader-title" hidden>
+    <header class="reader-header">
+      <button id="reader-back" type="button">← Back to papers</button>
+      <div><p class="eyebrow">Keyword PDF viewer</p><h1 id="reader-title">Document reader</h1></div>
+      <button id="sidebar-toggle" class="secondary" type="button" aria-expanded="true" aria-controls="reader-sidebar">Minimize keyword sidebar</button>
+    </header>
+    <div id="reader-layout" class="reader-layout">
+      <main id="pdf-preview" class="pdf-preview" tabindex="-1" aria-label="Full extracted PDF preview"></main>
+      <aside id="reader-sidebar" class="reader-sidebar" aria-label="Keyword matches">
+        <div id="reader-status" class="status" role="status" aria-live="polite"></div>
+        <div id="reader-results"></div>
+      </aside>
+    </div>
+  </section>
+  <footer>Metadata and citation counts: OpenAlex. PDF content stays in this local application.</footer>
+</body>
+</html>

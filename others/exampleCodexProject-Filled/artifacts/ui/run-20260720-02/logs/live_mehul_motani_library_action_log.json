@@ -1,0 +1,48 @@
+{
+  "selectors": {
+    "primary_action": "#author-search button[type=\"submit\"]",
+    "secondary_action": ".candidate",
+    "final_action": ".work-card:first-child",
+    "status_target": "#works-status",
+    "verification_target": "#workspace"
+  },
+  "minDelayMs": 700,
+  "actions": [
+    {
+      "selector": "#author-search button[type=\"submit\"]",
+      "x": 1106,
+      "y": 449,
+      "label": "Search live OpenAlex for Mehul Motani",
+      "upload_initiating": false,
+      "timestamp": "2026-07-20T09:28:32.673Z",
+      "delta_from_previous_ms": null,
+      "raw_delta_before_wait_ms": null,
+      "wait_applied_ms": 0,
+      "ris_path": null
+    },
+    {
+      "selector": ".candidate:first-child",
+      "x": 418,
+      "y": 665,
+      "label": "Select first exact Mehul Motani candidate",
+      "upload_initiating": false,
+      "timestamp": "2026-07-20T09:28:33.455Z",
+      "delta_from_previous_ms": 782,
+      "raw_delta_before_wait_ms": 33,
+      "wait_applied_ms": 667,
+      "ris_path": null
+    },
+    {
+      "selector": ".work-card:first-child",
+      "x": 275,
+      "y": 1268,
+      "label": "Open first indexed Mehul Motani paper",
+      "upload_initiating": false,
+      "timestamp": "2026-07-20T09:28:34.265Z",
+      "delta_from_previous_ms": 810,
+      "raw_delta_before_wait_ms": 308,
+      "wait_applied_ms": 392,
+      "ris_path": null
+    }
+  ]
+}

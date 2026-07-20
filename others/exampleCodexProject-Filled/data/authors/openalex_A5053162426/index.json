@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "author": {
+    "id": "A5053162426",
+    "name": "John Chong Min Tan",
+    "affiliation": "National University of Singapore",
+    "works_count": 6,
+    "cited_by_count": 9,
+    "topics": [
+      "Multi-Agent Systems and Negotiation",
+      "Reinforcement Learning in Robotics",
+      "Topic Modeling"
+    ],
+    "orcid": "https://orcid.org/0009-0005-9463-8770",
+    "provider": "OpenAlex"
+  },
+  "last_synced_at": "2026-07-20T10:05:55.106188+00:00",
+  "papers": {
+    "W4413016512": {
+      "id": "W4413016512",
+      "title": "Classifying Patient Complaints Using Artificial Intelligence–Powered Large Language Models: Cross-Sectional Study",
+      "authors": [
+        "Sky Wei Chee Koh",
+        "Eunice Rui Ning Wong",
+        "John Chong Min Tan",
+        "Stephanie C. C. van der Lubbe",
+        "Jun Cong Goh",
+        "Ethan Sheng Yong Ching",
+        "Ian Wen Yih Chia",
+        "Si Hui Low",
+        "Ping Young Ang",
+        "Queenie Quek",
+        "Mehul Motani",
+        "José M Valderas"
+      ],
+      "year": 2025,
+      "venue": "Journal of Medical Internet Research",
+      "doi": "10.2196/74231",
+      "source_url": "https://doi.org/10.2196/74231",
+      "citation_count": 6,
+      "citation_source": "OpenAlex",
+      "retrieved_at": "2026-07-20T10:02:45.693123Z",
+      "pdf": {
+        "url": "https://www.jmir.org/2025/1/e74231/PDF",
+        "is_open_access": true,
+        "origin": "https://doi.org/10.2196/74231"
+      },
+      "first_seen_at": "2026-07-20T10:02:45.693513+00:00",
+      "last_seen_at": "2026-07-20T10:05:55.106188+00:00",
+      "documents": [
+        {
+          "origin": "open_access",
+          "source_url": "https://www.jmir.org/2025/1/e74231/PDF",
+          "relative_path": "papers/W4413016512/paper.pdf",
+          "byte_size": 269096,
+          "sha256": "622d625b3eb4034250489e1a0cb9d27079bfa260b5cfac062771618b82386985",
+          "status": "ready",
+          "error": null,
+          "page_count": null,
+          "created_at": "2026-07-20T10:03:05.256814+00:00",
+          "verified_at": "2026-07-20T10:03:05.256814+00:00"
+        }
+      ],
+      "library_state": "downloaded"
+    },
+    "W4402853645": {
+      "id": "W4402853645",
+      "title": "TaskGen: A Task-Based, Memory-Infused Agentic Framework using StrictJSON",
+      "authors": [
+        "John Chong Min Tan",
+        "Prince Saroj",
+        "Bharat Runwal",
+        "Hardik Maheshwari",
+        "Brian Lim Yi Sheng",
+        "Richard Cottrill",
+        "Alankrit Chona",
+        "Ambuj Kumar",
+        "Mehul Motani"
+      ],
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "doi": "10.48550/arxiv.2407.15734",
+      "source_url": "http://arxiv.org/abs/2407.15734",
+      "citation_count": 0,
+      "citation_source": "OpenAlex",
+      "retrieved_at": "2026-07-20T10:02:45.693123Z",
+      "pdf": {
+        "url": "https://arxiv.org/pdf/2407.15734",
+        "is_open_access": true,
+        "origin": "http://arxiv.org/abs/2407.15734"
+      },
+      "first_seen_at": "2026-07-20T10:02:45.693513+00:00",
+      "last_seen_at": "2026-07-20T10:05:55.106188+00:00",
+      "documents": [
+        {
+          "origin": "open_access",
+          "source_url": "https://arxiv.org/pdf/2407.15734",
+          "relative_path": "papers/W4402853645/paper.pdf",
+          "byte_size": 9159469,
+          "sha256": "f44f166d64f06eba188a640ba63776d4f11dcab76140dc01752b8a5e726a79f5",
+          "status": "ready",
+          "error": null,
+          "page_count": null,
+          "created_at": "2026-07-20T10:03:13.614418+00:00",
+          "verified_at": "2026-07-20T10:03:13.614418+00:00"
+        }
+      ],
+      "library_state": "downloaded"
+    },
+    "W4401110393": {
+      "id": "W4401110393",
+      "title": "LLMs as a System of Multiple Expert Agents: An Approach to Solve the Abstraction and Reasoning Corpus (ARC) Challenge",
+      "authors": [
+        "John Chong Min Tan",
+        "Mehul Motani"
+      ],
+      "year": 2024,
+      "venue": null,
+      "doi": "10.1109/cai59869.2024.00149",
+      "source_url": "http://dx.doi.org/10.1109/cai59869.2024.00149",
+      "citation_count": 0,
+      "citation_source": "OpenAlex",
+      "retrieved_at": "2026-07-20T10:02:45.693123Z",
+      "pdf": {
+        "url": null,
+        "is_open_access": false,
+        "origin": null
+      },
+      "first_seen_at": "2026-07-20T10:02:45.693513+00:00",
+      "last_seen_at": "2026-07-20T10:05:55.106188+00:00",
+      "documents": [],
+      "library_state": "upload required"
+    },
+    "W4390188349": {
+      "id": "W4390188349",
+      "title": "Learning, Fast and Slow: A Goal-Directed Memory-Based Approach for Dynamic Environments",
+      "authors": [
+        "John Chong Min Tan",
+        "Mehul Motani"
+      ],
+      "year": 2023,
+      "venue": null,
+      "doi": "10.1109/icdl55364.2023.10364540",
+      "source_url": "http://dx.doi.org/10.1109/icdl55364.2023.10364540",
+      "citation_count": 0,
+      "citation_source": "OpenAlex",
+      "retrieved_at": "2026-07-20T10:02:45.693123Z",
+      "pdf": {
+        "url": null,
+        "is_open_access": false,
+        "origin": null
+      },
+      "first_seen_at": "2026-07-20T10:02:45.693513+00:00",
+      "last_seen_at": "2026-07-20T10:05:55.106188+00:00",
+      "documents": [],
+      "library_state": "upload required"
+    },
+    "W4387559744": {
+      "id": "W4387559744",
+      "title": "Large Language Model (LLM) as a System of Multiple Expert Agents: An Approach to solve the Abstraction and Reasoning Corpus (ARC) Challenge",
+      "authors": [
+        "John Chong Min Tan",
+        "Mehul Motani"
+      ],
+      "year": 2023,
+      "venue": "arXiv (Cornell University)",
+      "doi": "10.48550/arxiv.2310.05146",
+      "source_url": "http://arxiv.org/abs/2310.05146",
+      "citation_count": 3,
+      "citation_source": "OpenAlex",
+      "retrieved_at": "2026-07-20T10:02:45.693123Z",
+      "pdf": {
+        "url": "https://arxiv.org/pdf/2310.05146",
+        "is_open_access": true,
+        "origin": "http://arxiv.org/abs/2310.05146"
+      },
+      "first_seen_at": "2026-07-20T10:02:45.693513+00:00",
+      "last_seen_at": "2026-07-20T10:05:55.106188+00:00",
+      "documents": [
+        {
+          "origin": "open_access",
+          "source_url": "https://arxiv.org/pdf/2310.05146",
+          "relative_path": "papers/W4387559744/paper.pdf",
+          "byte_size": 1013594,
+          "sha256": "54fde51287c3b31b6f8b6eff30eda712d006367e7740cb9fca74ed0985548830",
+          "status": "ready",
+          "error": null,
+          "page_count": null,
+          "created_at": "2026-07-20T10:03:13.987441+00:00",
+          "verified_at": "2026-07-20T10:03:13.987441+00:00"
+        }
+      ],
+      "library_state": "downloaded"
+    },
+    "W4319048875": {
+      "id": "W4319048875",
+      "title": "Learning, Fast and Slow: A Goal-Directed Memory-Based Approach for Dynamic Environments",
+      "authors": [
+        "John Chong Min Tan",
+        "Mehul Motani"
+      ],
+      "year": 2023,
+      "venue": "arXiv (Cornell University)",
+      "doi": "10.48550/arxiv.2301.13758",
+      "source_url": "http://arxiv.org/abs/2301.13758",
+      "citation_count": 0,
+      "citation_source": "OpenAlex",
+      "retrieved_at": "2026-07-20T10:02:45.693123Z",
+      "pdf": {
+        "url": "https://arxiv.org/pdf/2301.13758",
+        "is_open_access": true,
+        "origin": "http://arxiv.org/abs/2301.13758"
+      },
+      "first_seen_at": "2026-07-20T10:02:45.693513+00:00",
+      "last_seen_at": "2026-07-20T10:05:55.106188+00:00",
+      "documents": [
+        {
+          "origin": "open_access",
+          "source_url": "https://arxiv.org/pdf/2301.13758",
+          "relative_path": "papers/W4319048875/paper.pdf",
+          "byte_size": 1559799,
+          "sha256": "c4defee9eb6fa275eade1cd9c18ec8f0d8271ea2583f127b5aca7ab45b4ff0f3",
+          "status": "ready",
+          "error": null,
+          "page_count": null,
+          "created_at": "2026-07-20T10:03:14.357379+00:00",
+          "verified_at": "2026-07-20T10:03:14.357379+00:00"
+        }
+      ],
+      "library_state": "downloaded"
+    }
+  }
+}

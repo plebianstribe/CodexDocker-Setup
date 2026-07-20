@@ -1,0 +1,26 @@
+[
+  {
+    "id": "2f5f9b0a4e9f43219cfe56e986434045",
+    "work_id": "W4319048875",
+    "display_name": "2301.13758",
+    "origin": "open_access",
+    "source_url": "https://arxiv.org/pdf/2301.13758",
+    "local_path": "data/uploads/2f5f9b0a4e9f43219cfe56e986434045.pdf",
+    "status": "ready",
+    "error": null,
+    "page_count": 22,
+    "created_at": "2026-07-20T10:05:34.722430Z"
+  },
+  {
+    "id": "02d8876ac51a4d49adcd55b99c51f2ed",
+    "work_id": "W4319048875",
+    "display_name": "2301.13758",
+    "origin": "open_access",
+    "source_url": "https://arxiv.org/pdf/2301.13758",
+    "local_path": "data/uploads/02d8876ac51a4d49adcd55b99c51f2ed.pdf",
+    "status": "ready",
+    "error": null,
+    "page_count": 22,
+    "created_at": "2026-07-20T10:05:59.756580Z"
+  }
+]

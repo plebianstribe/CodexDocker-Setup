@@ -1,0 +1,112 @@
+{
+  "selectors": {
+    "primary_action": "#author-search button[type=\"submit\"]",
+    "secondary_action": ".candidate:first-child",
+    "work": ".work-card:first-child",
+    "find": "#analysis-form button[type=\"submit\"]",
+    "match": ".reader-keyword:first-child .reader-match:first-of-type",
+    "sidebar": "#sidebar-toggle",
+    "back": "#reader-back",
+    "status_target": "#reader-status",
+    "verification_target": "#reader-layout"
+  },
+  "minDelayMs": 700,
+  "actions": [
+    {
+      "selector": "#author-search button[type=\"submit\"]",
+      "x": 1186,
+      "y": 454,
+      "label": "Search author",
+      "upload_initiating": false,
+      "timestamp": "2026-07-20T10:13:11.728Z",
+      "delta_from_previous_ms": null,
+      "raw_delta_before_wait_ms": null,
+      "wait_applied_ms": 0,
+      "ris_path": null
+    },
+    {
+      "selector": ".candidate:first-child",
+      "x": 800,
+      "y": 627,
+      "label": "Select author",
+      "upload_initiating": false,
+      "timestamp": "2026-07-20T10:13:12.517Z",
+      "delta_from_previous_ms": 789,
+      "raw_delta_before_wait_ms": 18,
+      "wait_applied_ms": 682,
+      "ris_path": null
+    },
+    {
+      "selector": ".work-card:first-child",
+      "x": 358,
+      "y": 1164,
+      "label": "Select paper",
+      "upload_initiating": false,
+      "timestamp": "2026-07-20T10:13:13.321Z",
+      "delta_from_previous_ms": 804,
+      "raw_delta_before_wait_ms": 8,
+      "wait_applied_ms": 692,
+      "ris_path": null
+    },
+    {
+      "selector": "#analysis-form button[type=\"submit\"]",
+      "x": 1374,
+      "y": 1063,
+      "label": "Find keywords",
+      "upload_initiating": false,
+      "timestamp": "2026-07-20T10:13:14.109Z",
+      "delta_from_previous_ms": 788,
+      "raw_delta_before_wait_ms": 271,
+      "wait_applied_ms": 429,
+      "ris_path": null
+    },
+    {
+      "selector": ".reader-keyword:first-child .reader-match:first-of-type",
+      "x": 1390,
+      "y": 254,
+      "label": "Open highlighted match",
+      "upload_initiating": false,
+      "timestamp": "2026-07-20T10:13:14.893Z",
+      "delta_from_previous_ms": 784,
+      "raw_delta_before_wait_ms": 21,
+      "wait_applied_ms": 679,
+      "ris_path": null
+    },
+    {
+      "selector": "#sidebar-toggle",
+      "x": 1460,
+      "y": 69,
+      "label": "Minimize keyword sidebar",
+      "upload_initiating": false,
+      "timestamp": "2026-07-20T10:13:15.675Z",
+      "delta_from_previous_ms": 782,
+      "raw_delta_before_wait_ms": 15,
+      "wait_applied_ms": 685,
+      "ris_path": null
+    },
+    {
+      "selector": "#sidebar-toggle",
+      "x": 1464,
+      "y": 69,
+      "label": "Restore keyword sidebar",
+      "upload_initiating": false,
+      "timestamp": "2026-07-20T10:13:16.450Z",
+      "delta_from_previous_ms": 775,
+      "raw_delta_before_wait_ms": 8,
+      "wait_applied_ms": 692,
+      "ris_path": null
+    },
+    {
+      "selector": "#reader-back",
+      "x": 112,
+      "y": 60,
+      "label": "Back to papers",
+      "upload_initiating": false,
+      "timestamp": "2026-07-20T10:13:17.244Z",
+      "delta_from_previous_ms": 794,
+      "raw_delta_before_wait_ms": 342,
+      "wait_applied_ms": 358,
+      "ris_path": null
+    }
+  ]
+}

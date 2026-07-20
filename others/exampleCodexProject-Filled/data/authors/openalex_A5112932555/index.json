@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "author": {
+    "id": "A5112932555",
+    "name": "Tan John Chong Min",
+    "affiliation": null,
+    "works_count": 1,
+    "cited_by_count": 1,
+    "topics": [
+      "Topic Modeling",
+      "Natural Language Processing Techniques",
+      "Multimodal Machine Learning Applications"
+    ],
+    "orcid": null,
+    "provider": "OpenAlex"
+  },
+  "last_synced_at": "2026-07-20T10:02:46.733767+00:00",
+  "papers": {
+    "W4379924607": {
+      "id": "https://openalex.org/W4379924607",
+      "title": "An Approach to Solving the Abstraction and Reasoning Corpus (ARC) Challenge",
+      "authors": [
+        "Tan John Chong Min"
+      ],
+      "year": 2023,
+      "venue": "arXiv (Cornell University)",
+      "doi": "10.48550/arxiv.2306.03553",
+      "source_url": "http://arxiv.org/abs/2306.03553",
+      "citation_count": 1,
+      "citation_source": "OpenAlex",
+      "retrieved_at": "2026-07-20T10:02:46.732935Z",
+      "pdf": {
+        "url": "https://arxiv.org/pdf/2306.03553",
+        "is_open_access": true,
+        "origin": "http://arxiv.org/abs/2306.03553"
+      },
+      "first_seen_at": "2026-07-20T10:02:46.733767+00:00",
+      "last_seen_at": "2026-07-20T10:02:46.733767+00:00",
+      "documents": [],
+      "library_state": "new"
+    }
+  }
+}
