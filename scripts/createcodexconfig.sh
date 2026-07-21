@@ -5,27 +5,32 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
 YOLO_MODE=0
+AZURE_MODE=0
 ENV_FILE=""
 
 while (($#)); do
     case "$1" in
+        --azure)
+            AZURE_MODE=1
+            shift
+            ;;
         --yolo)
             YOLO_MODE=1
             shift
             ;;
         -h|--help)
-            echo "Usage: $0 [--yolo] [path/to/.env]"
+            echo "Usage: $0 [--azure] [--yolo] [path/to/.env]"
             exit 0
             ;;
         -*)
             echo "Error: unknown option: $1"
-            echo "Usage: $0 [--yolo] [path/to/.env]"
+            echo "Usage: $0 [--azure] [--yolo] [path/to/.env]"
             exit 1
             ;;
         *)
             if [ -n "${ENV_FILE}" ]; then
                 echo "Error: multiple env files provided."
-                echo "Usage: $0 [--yolo] [path/to/.env]"
+                echo "Usage: $0 [--azure] [--yolo] [path/to/.env]"
                 exit 1
             fi
             ENV_FILE="$1"
@@ -52,24 +57,6 @@ get_env_value() {
     printf "%s" "${line}"
 }
 
-REMOTE_URL=""
-for key in CODEX_BASE_URL REMOTE_URL REMOTEURL AZURE_OPENAI_BASE_URL; do
-    value="$(get_env_value "${key}" "${ENV_FILE}")"
-    if [ -n "${value}" ]; then
-        REMOTE_URL="${value}"
-        break
-    fi
-done
-
-if [ -z "${REMOTE_URL}" ]; then
-    echo "Error: no remote URL found in ${ENV_FILE}."
-    echo "Set one of: REMOTEURL, REMOTE_URL, CODEX_BASE_URL, AZURE_OPENAI_BASE_URL"
-    exit 1
-fi
-
-MODEL_PROVIDER="$(get_env_value "CODEX_MODEL_PROVIDER" "${ENV_FILE}")"
-MODEL_PROVIDER="${MODEL_PROVIDER:-azure}"
-
 MODEL_NAME="$(get_env_value "CODEX_MODEL" "${ENV_FILE}")"
 MODEL_NAME="${MODEL_NAME:-gpt-5.3.codex}"
 
@@ -78,6 +65,39 @@ REASONING_EFFORT="${REASONING_EFFORT:-low}"
 
 API_ENV_KEY="$(get_env_value "CODEX_API_ENV_KEY" "${ENV_FILE}")"
 API_ENV_KEY="${API_ENV_KEY:-CODEX_API_KEY}"
+
+REMOTE_URL=""
+MODEL_PROVIDER=""
+PROVIDER_CONFIG=""
+if [ "${AZURE_MODE}" -eq 1 ]; then
+    for key in CODEX_BASE_URL REMOTE_URL REMOTEURL AZURE_OPENAI_BASE_URL; do
+        value="$(get_env_value "${key}" "${ENV_FILE}")"
+        if [ -n "${value}" ]; then
+            REMOTE_URL="${value}"
+            break
+        fi
+    done
+
+    if [ -z "${REMOTE_URL}" ]; then
+        echo "Error: no remote URL found in ${ENV_FILE}."
+        echo "Set one of: REMOTEURL, REMOTE_URL, CODEX_BASE_URL, AZURE_OPENAI_BASE_URL"
+        exit 1
+    fi
+
+    MODEL_PROVIDER="$(get_env_value "CODEX_MODEL_PROVIDER" "${ENV_FILE}")"
+    MODEL_PROVIDER="${MODEL_PROVIDER:-azure}"
+
+    PROVIDER_CONFIG=$(cat <<EOF
+model_provider = "${MODEL_PROVIDER}"
+
+[model_providers.${MODEL_PROVIDER}]
+name = "Azure OpenAI"
+base_url = "${REMOTE_URL}"
+env_key = "${API_ENV_KEY}"
+wire_api = "responses"
+EOF
+)
+fi
 
 OUTPUT_CONFIG="./.codex/config.toml"
 FULL_PERMS_LINE=""
@@ -88,18 +108,12 @@ fi
 mkdir -p "$(dirname "${OUTPUT_CONFIG}")"
 
 cat > "${OUTPUT_CONFIG}" <<EOF
-model_provider = "${MODEL_PROVIDER}"
 model = "${MODEL_NAME}"
 model_reasoning_effort = "${REASONING_EFFORT}"
 personality = "pragmatic"
 approvals_reviewer = "user"
 ${FULL_PERMS_LINE}
-
-[model_providers.${MODEL_PROVIDER}]
-name = "Azure OpenAI"
-base_url = "${REMOTE_URL}"
-env_key = "${API_ENV_KEY}"
-wire_api = "responses"
+${PROVIDER_CONFIG}
 
 [projects."/app"]
 trust_level = "trusted"
@@ -112,7 +126,12 @@ trust_level = "trusted"
 EOF
 
 echo "Wrote Codex config: ${OUTPUT_CONFIG}"
-echo "Using base_url from env: ${REMOTE_URL}"
+if [ "${AZURE_MODE}" -eq 1 ]; then
+    echo "Azure mode enabled: provider=${MODEL_PROVIDER}"
+    echo "Using base_url from env: ${REMOTE_URL}"
+else
+    echo "Default mode enabled: no Azure provider config written"
+fi
 if [ "${YOLO_MODE}" -eq 1 ]; then
     echo "YOLO mode enabled: sandbox_mode=danger-full-access"
 fi

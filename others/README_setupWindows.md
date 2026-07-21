@@ -33,7 +33,7 @@ when pushes are required. Then configure the credential file that can be mounted
 into Docker:
 
 ```bash
-git config --global credential.helper 'store --file=$HOME/.git-credentials-codex'
+git config --global credential.helper 'store --file=$HOME/.git-credentials'
 
 read -r -p "GitHub username: " githubUser
 read -r -s -p "GitHub PAT: " githubPat

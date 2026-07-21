@@ -11,7 +11,7 @@ On the host, configure a dedicated Git credential file. Run the commands below,
 then paste the PAT copied from GitHub when prompted. The PAT input is hidden:
 
 ```bash
-git config --global credential.helper  "store --file=$HOME/.git-credentials-codex"
+git config --global credential.helper  "store --file=$HOME/.git-credentials"
 
 read -r -p "GitHub username: " githubUser
 read -r -s -p "GitHub PAT: " githubPat
@@ -21,9 +21,8 @@ printf 'protocol=https\nhost=github.com\nusername=%s\npassword=%s\n\n' \
 unset githubPat
 ```
 
-Git stores the credential as plaintext in `$HOME/.git-credentials-codex`. Keep
-this file private. The dedicated filename lets you mount only this credential
-file into the container instead of exposing other credential-store files.
+Git stores the credential as plaintext in `$HOME/.git-credentials`. Keep this
+file private.
 
 ```bash
 git clone <THIS_REPO_URL>
@@ -34,7 +33,6 @@ cp .env.example .env
 Fill in `.env`:
 
 ```dotenv
-CODEX_BASE_URL=<YOUR_API_ENDPOINT>
 CODEX_API_KEY=<YOUR_API_KEY>
 ```
 
@@ -44,6 +42,9 @@ Create the Codex config and build the minimal image:
 ./scripts/createcodexconfig.sh
 docker build -f Dockerfile_minimal -t codex-uv:minimal .
 ```
+
+For Azure OpenAI, include `CODEX_BASE_URL=<YOUR_AZURE_API_ENDPOINT>` in `.env`
+and run `./scripts/createcodexconfig.sh --azure`.
 
 Choose a project directory and run the container:
 
@@ -58,7 +59,7 @@ docker run -it \
   --volume "$PWD":/workspace \
   --volume "$PWD/../$codexProjDir":/app \
   --volume "$HOME/.gitconfig":/home/.gitconfig:ro \
-  --volume "$HOME/.git-credentials-codex":/home/.git-credentials-codex:ro \
+  --volume "$HOME/.git-credentials":/home/.git-credentials:ro \
   codex-uv:minimal
 ```
 
@@ -74,7 +75,7 @@ Use these guides when you want to extend the basic local setup:
 | Guide | Location | When to use it |
 | --- | --- | --- |
 | Docker commands | [`others/README_dockercommands.md`](others/README_dockercommands.md) | Use a CUDA image instead of the minimal image when your project needs GPU acceleration. The guide provides build and run commands for CUDA 12.0, 12.9, and 13.0. |
-| Git setup | [`others/README_gitsetup.md`](others/README_gitsetup.md) | Use this when you want Codex to push local branches directly to a remote repository. Git needs the host's `.gitconfig` and `.git-credentials-codex` files mounted inside the container; the guide explains how to create and mount them. |
+| Git setup | [`others/README_gitsetup.md`](others/README_gitsetup.md) | Use this when you want Codex to push local branches directly to a remote repository. Git needs the host's `.gitconfig` and `.git-credentials` files mounted inside the container; the guide explains how to create and mount them. |
 | Windows setup | [`others/README_setupWindows.md`](others/README_setupWindows.md) | Start here when your host is Windows and you need to prepare WSL2, Docker Desktop, Ubuntu, Git, and the repository before following the main setup. |
 | Example project | [`others/README_exampleCodexProject.md`](others/README_exampleCodexProject.md) | Use this when you want a starter task for the `exampleCodexProject` folder. It explains how to copy in a brief for an author citation and PDF keyword explorer. |
 
