@@ -11,7 +11,7 @@ On the host, configure a dedicated Git credential file. Run the commands below,
 then paste the PAT copied from GitHub when prompted. The PAT input is hidden:
 
 ```bash
-git config --global credential.helper  "store --file=$HOME/.git-credentials"
+git config --global credential.helper  "store --file=$HOME/.git-credentials-codex"
 
 read -r -p "GitHub username: " githubUser
 read -r -s -p "GitHub PAT: " githubPat
@@ -25,8 +25,8 @@ Git stores the credential as plaintext in `$HOME/.git-credentials`. Keep this
 file private.
 
 ```bash
-git clone <THIS_REPO_URL>
-cd Docker-Codex-EditCopy
+git clone https://github.com/plebianstribe/CodexDocker-Setup.git
+cd CodexDocker-Setup
 cp .env.example .env
 ```
 
@@ -59,7 +59,7 @@ docker run -it \
   --volume "$PWD":/workspace \
   --volume "$PWD/../$codexProjDir":/app \
   --volume "$HOME/.gitconfig":/home/.gitconfig:ro \
-  --volume "$HOME/.git-credentials":/home/.git-credentials:ro \
+  --volume "$HOME/.git-credentials-codex":/home/.git-credentials:ro \
   codex-uv:minimal
 ```
 
