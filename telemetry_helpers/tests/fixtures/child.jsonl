@@ -1,0 +1,2 @@
+{"timestamp":"2026-07-26T01:00:00.500Z","type":"session_meta","payload":{"session_id":"root-fixture","id":"child-fixture","parent_thread_id":"root-fixture","agent_role":"evidence","agent_nickname":"fixture-child","cwd":"/fixture","git":{"branch":"fixture"}}}
+{"timestamp":"2026-07-26T01:00:02.500Z","type":"response_item","payload":{"type":"agent_message","author":"child","recipient":"root","content":[{"type":"output_text","text":"audit complete"}]}}

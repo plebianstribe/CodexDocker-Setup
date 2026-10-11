@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TrajB-Lite run packet",
+  "type": "object",
+  "required": [
+    "schema_version", "goal_id", "run_id", "trajectory_id", "project_root", "execution_start_commit",
+    "goal_file", "tracker_file", "task_spec", "output_dir", "artifact_dir", "status", "phases"
+  ],
+  "properties": {
+    "schema_version": {"const": "trajb-lite/v1"},
+    "goal_id": {"type": "string", "minLength": 1},
+    "run_id": {"type": "string", "minLength": 1},
+    "trajectory_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$"},
+    "project_root": {"type": "string", "pattern": "^/"},
+    "execution_start_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "goal_file": {"type": "string", "pattern": "^/"},
+    "tracker_file": {"type": "string", "pattern": "^/"},
+    "task_spec": {"type": "string", "pattern": "^/"},
+    "output_dir": {"type": "string", "pattern": "^/"},
+    "artifact_dir": {"type": "string", "pattern": "^/"},
+    "status": {"const": "ready_to_launch"},
+    "phases": {
+      "type": "array", "minItems": 3,
+      "items": {"type": "object", "required": ["id", "fresh_root"]}
+    }
+  },
+  "additionalProperties": true
+}

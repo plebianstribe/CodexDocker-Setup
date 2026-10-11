@@ -1,0 +1,6 @@
+{"timestamp":"2026-07-26T01:00:00Z","type":"session_meta","payload":{"session_id":"root-fixture","id":"root-fixture","parent_thread_id":null,"agent_role":"primary","agent_nickname":"fixture-root","cwd":"/fixture","git":{"branch":"fixture"}}}
+{"timestamp":"2026-07-26T01:00:01Z","type":"turn_context","payload":{"turn_id":"turn-1","model":"gpt-test","effort":"high","sandbox_policy":{"type":"workspace-write"}}}
+{"timestamp":"2026-07-26T01:00:02Z","type":"response_item","payload":{"type":"message","role":"user","content":[{"type":"input_text","text":"benchmark request token=secret-value"}]}}
+{"timestamp":"2026-07-26T01:00:03Z","type":"response_item","payload":{"type":"custom_tool_call","id":"call-1","call_id":"call-1","name":"functions.exec_command","input":"{\"cmd\":\"true\",\"workdir\":\"/fixture\"}","status":"completed"}}
+{"timestamp":"2026-07-26T01:00:04Z","type":"response_item","payload":{"type":"custom_tool_call_output","call_id":"call-1","output":"Process exited with code 0\nFinal output:\nok"}}
+{"timestamp":"2026-07-26T01:00:05Z","type":"event_msg","payload":{"type":"token_count","info":{"last_token_usage":{"input_tokens":10,"cached_input_tokens":3,"output_tokens":4,"reasoning_output_tokens":2,"total_tokens":16}}}}

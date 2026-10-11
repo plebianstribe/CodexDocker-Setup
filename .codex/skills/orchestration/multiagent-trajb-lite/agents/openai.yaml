@@ -1,0 +1,4 @@
+interface:
+  display_name: "Multiagent TrajB-Lite"
+  short_description: "Scaffold thin-coordinator multi-agent rollouts"
+  default_prompt: "Use $multiagent-trajb-lite to scaffold and validate a thin-coordinator multi-agent rollout for this goal."

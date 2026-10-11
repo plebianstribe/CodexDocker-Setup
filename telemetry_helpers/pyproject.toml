@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codex-telemetry-helpers"
+version = "1.0.0"
+description = "Portable Codex multi-agent rollout export and lifecycle hooks"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+codex-telemetry-export = "telemetry_helpers.exporter:main"
+codex-telemetry-hooks = "telemetry_helpers.hooks:main"
+codex-telemetry-verify = "telemetry_helpers.verify:main"
+codex-telemetry-bundle = "telemetry_helpers.bundle:main"
+
+[tool.setuptools.package-data]
+telemetry_helpers = ["schema/*.json"]

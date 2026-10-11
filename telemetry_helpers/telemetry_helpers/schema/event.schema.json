@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "event.schema.json",
+  "type": "object",
+  "required": ["benchmark_run_id", "trajectory_id", "event_id", "sequence", "source", "topology", "flow", "time", "event_type", "communication", "tool", "command", "runtime", "usage", "redaction", "coverage"],
+  "properties": {
+    "benchmark_run_id": {"type": "string", "minLength": 1},
+    "trajectory_id": {"type": "string", "minLength": 1},
+    "event_id": {"type": "string", "pattern": "^[a-f0-9]{24}$"},
+    "sequence": {"type": "integer", "minimum": 1},
+    "source": {"type": "object", "required": ["path", "line", "sha256"]},
+    "topology": {"type": "object", "required": ["root_session_id", "session_id", "parent_session_id", "agent_role", "task_name"]},
+    "flow": {"type": "object"},
+    "time": {"type": "object", "required": ["source", "utc"]},
+    "event_type": {"type": ["string", "null"]},
+    "communication": {"type": "object"},
+    "tool": {"type": "object"},
+    "command": {"type": "object"},
+    "runtime": {"type": "object", "required": ["requested_role", "resolved_role", "requested_model", "resolved_model", "requested_effort", "resolved_effort", "requested_sandbox", "resolved_sandbox", "concurrency_slot", "service_tier"]},
+    "usage": {"type": "object", "required": ["input", "cached_input", "output", "reasoning", "total"]},
+    "redaction": {"type": "object", "required": ["count", "classes", "salted_hashes"]},
+    "coverage": {"type": "object", "additionalProperties": {"enum": ["captured", "not_emitted", "redacted", "unresolved"]}}
+  },
+  "additionalProperties": true
+}

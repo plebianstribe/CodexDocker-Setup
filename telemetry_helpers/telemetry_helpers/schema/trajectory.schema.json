@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "trajectory.schema.json",
+  "type": "object",
+  "required": ["exporter_version", "benchmark_run_id", "trajectory_id", "root_session_id", "selection_predicate", "source_records", "selected_sessions", "policy_attestations", "event_count", "exported_at_utc"],
+  "properties": {
+    "exporter_version": {"type": "string"},
+    "benchmark_run_id": {"type": "string", "minLength": 1},
+    "trajectory_id": {"type": "string", "minLength": 1},
+    "root_session_id": {"type": "string", "minLength": 1},
+    "selection_predicate": {"type": "string"},
+    "source_records": {"type": "array", "items": {"type": "object", "required": ["path", "sha256", "size", "mtime_utc"]}},
+    "selected_sessions": {"type": "array", "items": {"type": "string"}},
+    "policy_attestations": {"type": "array", "items": {"type": "object", "required": ["session_id", "checks"]}},
+    "event_count": {"type": "integer", "minimum": 0},
+    "exported_at_utc": {"type": "string"}
+  }
+}
